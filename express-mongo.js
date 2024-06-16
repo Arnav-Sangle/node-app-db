@@ -2,6 +2,7 @@ const express = require("express")
 const bp = require("body-parser")
 const mongoose = require("mongoose")
 const URL = "mongodb+srv://admin:admin123@cluster0.cuee2hr.mongodb.net/gfgdb?retryWrites=true&w=majority&appName=Cluster0";
+const port = process.env.PORT || 3000;
 
 const empc = require("./models/model.js")
 
@@ -34,8 +35,8 @@ app.delete("/deleteuser/:id", async(req, res)=>{
 
 const startServer = async()=>{
     await mongoose.connect(URL)
-    app.listen(3000, ()=>{
-        console.log("server is ready...!")
+    app.listen(port, ()=>{
+        console.log(`listening on port ${port} server is ready...!`)
     })
 }
 startServer()
