@@ -2,7 +2,7 @@ const express = require("express")
 const bp = require("body-parser")
 const mongoose = require("mongoose")
 const URL = "mongodb+srv://admin:admin123@cluster0.cuee2hr.mongodb.net/gfgdb?retryWrites=true&w=majority&appName=Cluster0";
-const port = process.env.PORT || 3000;
+const port = 3000
 
 const empc = require("./models/model.js")
 
