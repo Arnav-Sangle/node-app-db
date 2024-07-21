@@ -14,19 +14,19 @@ app.post("/adduser", (req,res)=>{
     res.send('user is added')
 })
 
-app.get("/loaddata", async(req,res)=>{                         // GET = async response 
+app.get("/loadproducts", async(req,res)=>{                         // GET = async response 
     const users = await empc.find()                       
     res.send(users)
 })
 
-app.get("/loaddata/:id", async(req,res)=>{
+app.get("/loadproduct/:id", async(req,res)=>{
     const uid = parseInt(req.params.id)                      //integer value in postman passed as string     to convert back to int       use parseInt()        /101 
     // const uid = req.params.id                             //to keep it as string and use ObjectId('666d26117f1e695f435f7daa')                                /666d26117f1e695f435f7daa
     const users = await empc.findById(uid)                       
     res.send(users)
 })
 
-app.delete("/deleteuser/:id", async(req, res)=>{
+app.delete("/deleteproduct/:id", async(req, res)=>{
     const uid = parseInt(req.params.id)
     const users = await empc.findByIdAndDelete(uid)
     res.send('user deleted')
