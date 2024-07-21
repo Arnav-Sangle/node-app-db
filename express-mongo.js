@@ -19,7 +19,7 @@ app.get("/loadproducts", async(req,res)=>{                         // GET = asyn
     res.send(users)
 })
 
-app.get("/loadproduct/:id", async(req,res)=>{
+app.get("/loadproducts/:id", async(req,res)=>{
     const uid = parseInt(req.params.id)                      //integer value in postman passed as string     to convert back to int       use parseInt()        /101 
     // const uid = req.params.id                             //to keep it as string and use ObjectId('666d26117f1e695f435f7daa')                                /666d26117f1e695f435f7daa
     const users = await empc.findById(uid)                       
